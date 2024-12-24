@@ -7,6 +7,7 @@ dotenv.config();
 
 import { PORT } from "./config";
 import cookieParser from "cookie-parser";
+import uploadRouter from "./route/uploadRoutes";
 
 const app = express();
 
@@ -19,7 +20,8 @@ app.get('/health', (_, res) => {
     res.send('Server is running');
 });
 
-app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/upload', uploadRouter);
 
 
 app.listen(PORT, () => {

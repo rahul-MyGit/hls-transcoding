@@ -12,6 +12,8 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.717.0",
+    "@aws-sdk/s3-request-presigner": "^3.717.0",
     "@prisma/client": "^6.1.0",
     "@types/cors": "^2.8.17",
     "@types/dotenv": "^6.1.1",
@@ -25,6 +27,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
+    "ioredis": "^5.4.2",
     "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
