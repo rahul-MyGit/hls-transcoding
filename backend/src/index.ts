@@ -8,6 +8,7 @@ dotenv.config();
 import { PORT } from "./config";
 import cookieParser from "cookie-parser";
 import uploadRouter from "./route/uploadRoutes";
+import videoRouter from "./route/videoRoutes";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get('/health', (_, res) => {
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/upload', uploadRouter);
+app.use('/api/v1/video', videoRouter)
 
 
 app.listen(PORT, () => {
