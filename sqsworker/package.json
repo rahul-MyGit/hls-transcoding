@@ -1,0 +1,23 @@
+{
+  "name": "sqsworker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-ecs": "^3.716.0",
+    "@aws-sdk/client-sqs": "^3.716.0",
+    "@types/ioredis": "^4.28.10",
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
+  }
+}

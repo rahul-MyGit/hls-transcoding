@@ -6,6 +6,7 @@ import { cookieConfig } from '../config/cookie';
 import { FRONTEND_URL, JWT_SECRET } from '../config';
 import prisma from '../db';
 import { ApiResponse } from '../lib/ApiResponse';
+import { User } from '../config/types';
 
 export const signup = async (req: Request, res: Response) => {
     try {
@@ -57,7 +58,8 @@ export const logout = (_req: Request, res: Response) => {
 }
 
 export const handleGoogleCallback = (req: Request, res: Response) => {
-    const token = jwt.sign({ userId: (req.user as any).id }, JWT_SECRET);
+    const user = req.user as User;
+    const token = jwt.sign({ userId: user.id }, JWT_SECRET);
     res.cookie('auth_token', token, cookieConfig);
     res.redirect(FRONTEND_URL || '/');
 }
