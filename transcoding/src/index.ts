@@ -1,4 +1,6 @@
 import { INPUT_FILE_PATH, OUTPUT_BUCKET, OUTPUT_FILE_PATH, RESOLUTION, VIDEO_BUCKET, VIDEO_KEY } from "./config";
+import { downloadFromS3, transcodeVideo } from "./lib/awsS3";
+import { markAsProcessing } from "./lib/redis";
 
 
 const transcode = async () => {
