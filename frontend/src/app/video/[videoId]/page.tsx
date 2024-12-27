@@ -1,11 +1,11 @@
 "use client";
 
-import VideoJS from "@/components/core/videojs";
+import VideoJS from "@/components/main/video";
 import { Button } from "@/components/ui/button";
 import React, { useRef, useState } from "react";
 
 const VideoPage = ({ params }: { params: { videoId: string } }) => {
-  const source = `https://s3.ap-south-1.amazonaws.com/hls-prod.shubhamvscode/${params.videoId}`;
+  const source = `https://s3.ap-south-1.amazonaws.com/hls-prod.rahulgujjar/${params.videoId}`;
   const playerRef = useRef(null);
   const [resolution, setResolution] = useState(360);
 

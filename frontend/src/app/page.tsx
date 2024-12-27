@@ -27,7 +27,7 @@ export default function Home() {
     }
     setIsUploading(true);
     try {
-      const urlResponse = await fetch("http://localhost:8080/api/upload", {
+      const urlResponse = await fetch("http://localhost:4000/api/v1/upload", {
         method: "POST",
         body: JSON.stringify({ filename: file?.name }),
         headers: {
@@ -50,7 +50,7 @@ export default function Home() {
         toast.success("Video uploaded successfully");
         setIsUploading(false);
         const res = await fetch(
-          `http://localhost:8080/api/video/update-status`,
+          `http://localhost:4000/api/v1/video/updateStatus`,
           {
             method: "POST",
             body: JSON.stringify({ id: file?.name }),
@@ -74,7 +74,7 @@ export default function Home() {
   };
 
   const getAllVideos = async () => {
-    const res = await fetch("http://localhost:8080/api/video/all");
+    const res = await fetch("http://localhost:4000/api/v1/video/all");
     const json = await res.json();
     setVideos(json?.videos);
   };
